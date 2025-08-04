@@ -1,0 +1,122 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:cards="sap.f.cards" xmlns:commons="sap.suite.ui.commons" xmlns:f="sap.f" xmlns:filterbar="sap.ui.comp.filterbar" controllerName="tms.tmssystem.controller.SettingU"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+<f:DynamicPage class="sapUiNoContentPadding"  >
+<f:header>
+<f:DynamicPageHeader pinnable="false">
+<Title text="Setting User Information"></Title>
+</f:DynamicPageHeader>
+</f:header>
+<f:content>
+<layout:Grid defaultSpan="XL6 L6 M6 S12"  class="sapUiSmallMarginTop">
+<f:Card >
+<f:header>
+<cards:Header title="Company Details"></cards:Header>
+</f:header>
+<f:content>
+<List >
+<CustomListItem type="Navigation" >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://edit"></core:Icon>
+<Text text="Edit Your Company Contact Info"></Text>
+</HBox>
+</CustomListItem>
+<CustomListItem type="Navigation" >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://sap-logo-shape"></core:Icon>
+<Text text="Upload Your Company Logo"></Text>
+</HBox>
+</CustomListItem>
+<CustomListItem type="Navigation" >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://currency"></core:Icon>
+<Text text="Customize the Local Currency and Unit of the measure " class="sapUiTinyMarginBegin"></Text>
+</HBox>
+</CustomListItem>
+</List>
+</f:content>
+</f:Card>
+
+<f:Card >
+<f:header>
+<cards:Header title="Personal Information"></cards:Header>
+</f:header>
+<f:content>
+<List >
+<CustomListItem type="Navigation" >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://edit"></core:Icon>
+<Text text="General Information"></Text>
+</HBox>
+</CustomListItem>
+<CustomListItem type="Navigation" >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://address-book"></core:Icon>
+<Text text="Contact Information"></Text>
+</HBox>
+</CustomListItem>
+<CustomListItem type="Navigation" >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://employee"></core:Icon>
+<Text text="Employee Detail Information" class="sapUiTinyMarginBegin"></Text>
+</HBox>
+</CustomListItem>
+</List>
+</f:content>
+</f:Card>
+
+<f:Card >
+<f:header>
+<cards:Header title="Order Information"></cards:Header>
+</f:header>
+<f:content>
+<List >
+<CustomListItem type="Active" >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://download"></core:Icon>
+<Text text="Download all Order Items"></Text>
+</HBox>
+</CustomListItem>
+<CustomListItem type="Active"  >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://activity-2"></core:Icon>
+<Text text="Download Your Invoice Sample"></Text>
+</HBox>
+</CustomListItem>
+<CustomListItem type="Active"  >
+<HBox justifyContent="SpaceBetween" class="sapUiSmallMargin">
+<core:Icon src="sap-icon://account"></core:Icon>
+<Text text="Download All Driver Details" class="sapUiTinyMarginBegin"></Text>
+</HBox>
+</CustomListItem>
+</List>
+</f:content>
+</f:Card>
+<f:Card>
+<f:header>
+<cards:Header title="Change Your Password"></cards:Header>
+</f:header>
+<f:content>
+<List >
+<InputListItem label="Old Password">
+<Input  type="Password"></Input>
+</InputListItem>
+<InputListItem label="New Password">
+<Input type="Password"></Input>
+</InputListItem>
+<InputListItem label="Confirm Password">
+<Input type="Password"></Input>
+</InputListItem>
+<InputListItem label="Submit Your Password">
+<Button text="Submit Pass" type="Emphasized"></Button>
+</InputListItem>
+</List>
+</f:content>
+</f:Card>
+</layout:Grid>
+
+</f:content>
+
+</f:DynamicPage>
+</mvc:View>

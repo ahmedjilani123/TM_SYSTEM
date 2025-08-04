@@ -1,0 +1,10 @@
+<mvc:View controllerName="tms.tmssystem.controller.Notfound"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+   <Page id="Notfound" title="Not Found" >
+   <content>
+   <Button text="Go Back To Home"></Button>
+   </content>
+   </Page>
+</mvc:View>

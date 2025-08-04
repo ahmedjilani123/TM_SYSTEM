@@ -1,0 +1,49 @@
+<mvc:View xmlns:unified="sap.ui.unified" xmlns:tnt="sap.tnt" controllerName="tms.tmssystem.controller.Main"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <tnt:ToolPage >
+    <tnt:header>
+    <tnt:ToolHeader >
+    <Button text="TMS"></Button>
+    <ToolbarSpacer ></ToolbarSpacer>
+    <Button icon="sap-icon://calendar" press="handlePopoverPress" >
+    <customData>
+   <BadgeCustomData key="badge" value="{CMNo>/todayDate}"></BadgeCustomData> 
+    </customData>
+    </Button>
+    <Button icon="sap-icon://bell" press="_BellPressMessage">
+     <customData>
+   <BadgeCustomData key="badge" value="3"></BadgeCustomData> 
+    </customData>
+    </Button>
+    <Button icon="sap-icon://email" press="_EmailMessagePress">
+     <customData>
+   <BadgeCustomData key="badge" value="2"></BadgeCustomData> 
+    </customData>
+    </Button>
+  	<Text text="Ramesh"></Text>	
+    <Avatar displaySize="XS" displayShape="Circle"></Avatar>
+    </tnt:ToolHeader>
+    </tnt:header>
+    <tnt:sideContent>
+    <tnt:SideNavigation selectedKey="{Accessibility>/key1}" selectedItem="{Accessibility>/text1}"  itemSelect="onItemSelect">
+    <tnt:NavigationList items="{Accessibility>/allView}" >
+    <tnt:NavigationListItem text="{Accessibility>name}" key="{Accessibility>key}" icon="{Accessibility>icon}"></tnt:NavigationListItem>
+    </tnt:NavigationList>
+
+    <tnt:fixedItem>
+    <tnt:NavigationList  itemSelect="LogOutPress">
+    <tnt:NavigationListItem  text="{Accessibility>/name}" icon="{Accessibility>/icon}"></tnt:NavigationListItem>
+    </tnt:NavigationList>
+    </tnt:fixedItem>
+    </tnt:SideNavigation>
+    
+    </tnt:sideContent>
+    <tnt:mainContents>
+     <App id="app">
+    </App>
+    </tnt:mainContents>
+    </tnt:ToolPage>
+   
+</mvc:View>

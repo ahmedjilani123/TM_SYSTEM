@@ -1,0 +1,78 @@
+<mvc:View xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" controllerName="tms.tmssystem.controller.LoginR"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <f:FlexibleColumnLayout layout="{ColumnLayout>/FLayout}">
+    <f:beginColumnPages>
+      <Page id="page" showHeader="false" class="loginPage">
+                <content>
+                    <HBox width="100%" height="100%" class="loginContainer">
+                        
+                        <!-- Left: Login Form -->
+                        <VBox class="loginFormBox" width="50%" justifyContent="Center" alignItems="Center">
+                        
+
+                            <VBox class="loginFormInner" width="100%" alignItems="Stretch">
+<VBox alignItems="Center" class="loginHeaderBox">
+    <Text text="LOGIN" class="loginMainTitle" />
+    <Text text="Login to your Transport Management System (TMS)" class="loginSubTitle" />
+</VBox>
+                                <form:SimpleForm  layout="ResponsiveGridLayout"
+                    columnsM="1" columnsL="1" columnsXL="-1" labelSpanM="12" labelSpanL="12"
+                 >
+                                    <form:content>
+
+                                        <Label text="Email" design="Bold" >
+                                      
+                                        </Label>
+                                        <Input />
+
+                                        <Label text="Password" design="Bold" >
+                                        <layoutData>
+                                        <layout:GridData span="XL1 L12 M12 S12"></layout:GridData>
+                                        </layoutData>
+                                        </Label>
+                                        <Input type="Password" >
+                                         <layoutData>
+                                        <layout:GridData span="XL1 L12 M12 S12"></layout:GridData>
+                                        </layoutData>
+                                        </Input>
+
+                                        <Link text="Forgot Password ?" >
+                                         <layoutData>
+                                        <layout:GridData span="XL1 L12 M12 S12"></layout:GridData>
+                                        </layoutData>
+                                        </Link>
+
+                                        <Button text="Login" id="loginBtn" press="LoginToMain" type="Emphasized" >
+ <layoutData>
+                                        <layout:GridData span="XL1 L12 M12 S12"></layout:GridData>
+                                        </layoutData>
+                                        </Button>
+
+                                    </form:content>
+                                </form:SimpleForm>
+
+                                <VBox alignItems="Center" class="loginFooter">
+                                    <Label text="Or Sign In With" design="Bold" />
+                                    <Button icon="Images/google.png" width="2.5rem" type="Neutral" />
+                                    <Link text="Need an Account? Register" press="onRegister" />
+                                </VBox>
+
+                            </VBox>
+                        </VBox>
+
+                        <!-- Right: Image Panel -->
+                        <VBox class="loginImageBox" width="50%" justifyContent="Center" alignItems="Center">
+                            <Image src="Images/Man1.png" class="loginImageF"  width="100%" height="100%" />
+                        </VBox>
+
+                    </HBox>
+                </content>
+            </Page>
+    </f:beginColumnPages>
+    <f:midColumnPages>
+    <core:Fragment  fragmentName="tms.tmssystem.view.register.Register" type="XML"/>
+    </f:midColumnPages>
+    </f:FlexibleColumnLayout>
+    
+</mvc:View>

@@ -1,0 +1,232 @@
+<mvc:View xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout" xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" controllerName="tms.tmssystem.controller.Shipment"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+  <f:DynamicPage showFooter="true" 	class="sapUiNoContentPadding"	stickySubheaderProvider="ShipmentWizard"
+			toggleHeaderOnTitleClick="false" >
+  <f:title>
+  <f:DynamicPageTitle >
+  <f:heading>
+  <Title text="Shipment Details"></Title>
+  </f:heading>
+  <f:actions>
+  <ProgressIndicator id="ShipmentProcessBar" showValue="true" displayValue="0%" percentValue="0" state="Success" displayAnimation="true" displayOnly="true"></ProgressIndicator>
+  </f:actions>
+  </f:DynamicPageTitle>
+  
+  </f:title>
+  <f:content>
+  	<Wizard id="ShipmentWizard"
+						class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+						showNextButton="false"
+						navigationChange="handleNavigationChange"
+						renderMode="Page">
+					<WizardStep id="ProductTypeStep"
+								title="Shipment Address"
+								validated="true"
+								activate="ShipmentTypeActivate">
+					
+					<form:SimpleForm   class="sapUiResponsiveContentPadding"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+  <form:content>
+  <core:Title text="Pickup Location(s)"></core:Title>
+ 
+  <Label text="Original Postal"></Label>
+  <Input ></Input>
+  <Label text="Original City"></Label>
+  <Input ></Input>
+    <Label text="Original State"></Label>
+    <Input ></Input>
+
+    <Label text="Original Country"></Label>
+    <Input ></Input>
+    <Label text="Original Pincode"></Label>
+    <Input ></Input>
+     <Label text="Payment Type"></Label>
+  <Select >
+  <items>
+    <core:Item key="COD" text="Cash on Delivery"></core:Item>
+    <core:Item key="Prepaid" text="Prepaid"></core:Item>
+    <core:Item key="Credit" text="Credit"></core:Item>
+    <core:Item key="Debit" text="Debit"></core:Item>
+    <core:Item key="Online" text="Online"></core:Item>
+    <core:Item key="Cheque" text="Cheque"></core:Item>
+    <core:Item key="BankTransfer" text="Bank Transfer"></core:Item>
+
+  </items>
+  </Select>
+    <core:Title text="Destination Location(s)"></core:Title>
+    <Label text="Destination Postal"></Label>
+    <Input ></Input>
+    <Label text="Destination City"></Label>
+    <Input ></Input>
+    <Label text="Destination State"></Label>
+    <Input ></Input>
+    <Label text="Destination Country"></Label>
+    <Input ></Input>
+    <Label text="Destination Pincode"></Label>
+    <Input ></Input>
+    <Label text="Shipment Type"></Label>
+    <Select >
+    <items>
+      <core:Item key="Domestic" text="Domestic"></core:Item>
+      <core:Item key="International" text="International"></core:Item>
+      <core:Item key="Express" text="Express"></core:Item>
+      <core:Item key="Standard" text="Standard"></core:Item>    
+   
+    </items>
+    </Select>
+  
+    
+  
+  </form:content>
+  </form:SimpleForm>
+					</WizardStep>
+					<WizardStep id="ProductInfoStep"
+								validated="false"
+								title="Ship Order Item Information"
+								activate="additionalInfoValidation">
+					<form:SimpleForm 
+                    layout="ResponsiveGridLayout"
+                    columnsM="1" columnsL="1" columnsXL="-1" labelSpanM="12" labelSpanL="12"
+                    >
+                    <form:content>
+                    <Label text="Item Name"></Label>
+                    <Input ></Input>
+                    <Label text="Item Description"></Label>
+                    <Input ></Input>
+                    <Label text="Item Quantity"></Label>
+                    <Input type="Number" ></Input>
+                    <Label text="Item Weight (Total)"></Label>
+                    <Input type="Number" fieldWidth="95%" description="KG"></Input>
+                    <Label text="Item Value"></Label>
+                    <Input type="Number" ></Input>
+                    <Label text="Item Category"></Label>
+                    <Select >
+                    <items>
+                        <core:Item key="Electronics" text="Electronics"></core:Item>
+                        <core:Item key="Clothing" text="Clothing"></core:Item>
+                        <core:Item key="Furniture" text="Furniture"></core:Item>
+                        <core:Item key="Books" text="Books"></core:Item>
+                        <core:Item key="Food" text="Food"></core:Item>
+                        <core:Item key="Toys" text="Toys"></core:Item> 
+                        </items>
+                    </Select>
+                   <Label text="Item Image"></Label>
+                   <unified:FileUploader width="100%" ></unified:FileUploader>
+                    <Label text="Item Value Currency"></Label>
+                    <Select >
+                    <items>
+                   
+                        <core:Item key="INR" text="INR"></core:Item>
+                </items>
+                    </Select>
+                    <core:Title text="Select a Vehicle"></core:Title>
+                    <Select >
+                     <items>
+                       <core:Item text="Car"></core:Item>
+<core:Item text="Truck"></core:Item>
+<core:Item text="Bike"></core:Item>
+                     </items>
+                    </Select>
+                    </form:content>
+                    </form:SimpleForm>
+                   
+					
+					</WizardStep>
+					<WizardStep id="OptionalInfoStep"
+								validated="true"
+								activate="optionalStepActivation"
+								title="Payment Information">
+					<form:SimpleForm   layout="ResponsiveGridLayout"
+                    columnsM="1" columnsL="1" columnsXL="-1" labelSpanM="12" labelSpanL="12"
+                    >
+                    <form:content>
+                    <Label text="Payment Select"></Label>
+                    <Select >
+                    <items>
+                    <core:Item text="Half Pay"></core:Item>
+                    <core:Item text="Full Pay"></core:Item>
+                    <core:Item text="Small Pay"></core:Item>
+                    </items>
+                    </Select>
+                   <Label text="Select Payment Method"></Label>
+                   <SegmentedButton >
+                   <items>
+                   <SegmentedButtonItem text="Card"></SegmentedButtonItem>
+                   <SegmentedButtonItem text="netbanking"></SegmentedButtonItem>
+                   <SegmentedButtonItem text="UPI"></SegmentedButtonItem>
+                   </items>
+                   </SegmentedButton>
+                   <Label text="Card Number"></Label>
+                   <Input ></Input>
+                    </form:content>
+                    </form:SimpleForm>
+					
+					</WizardStep>
+					<WizardStep id="PricingStep"
+								activate="pricingActivate"
+								complete="pricingComplete"
+								validated="true"
+								title="Invoice Data">
+					<form:SimpleForm >
+                    <form:content>
+                    <core:Title text="Local Location"></core:Title>
+                    <Label text="Original Postal"></Label>
+                    <Text text="Vasna"></Text>
+                    <Label text="Original City"></Label>
+                    <Text text="Ahmedabad"></Text>
+                    <Label text="Original State"></Label>
+                    <Text text="Gujarat"></Text>
+                       <core:Title text="Detiantion Location"></core:Title>
+                        <Label text="Original Postal"></Label>
+                    <Text text="Vasna"></Text>
+                    <Label text="Original City"></Label>
+                    <Text text="Ahmedabad"></Text>
+                    <Label text="Original State"></Label>
+                    <Text text="Gujarat"></Text>
+                       <core:Title text="Item Details"></core:Title>
+                        <Label text="Original Postal"></Label>
+                    <Text text="Vasna"></Text>
+                    <Label text="Original City"></Label>
+                    <Text text="Ahmedabad"></Text>
+                    <Label text="Original State"></Label>
+                    <Text text="Gujarat"></Text>
+                       <core:Title text="Payment Details"></core:Title>
+                        <Label text="Original Postal"></Label>
+                    <Text text="Vasna"></Text>
+                    <Label text="Original City"></Label>
+                    <Text text="Ahmedabad"></Text>
+                    <Label text="Original State"></Label>
+                    <Text text="Gujarat"></Text>
+                    </form:content>
+                    
+                    </form:SimpleForm>
+					</WizardStep>
+				
+				</Wizard>
+  </f:content>
+  <f:footer>
+  <OverflowToolbar >
+  <ToolbarSpacer ></ToolbarSpacer>
+    <Button text="Previous" press="PreviousWizardPress"></Button>
+  <Button text="Next" press="NextWizardPress"></Button>
+  </OverflowToolbar>
+  </f:footer>
+  </f:DynamicPage>
+</mvc:View>

@@ -1,0 +1,119 @@
+<mvc:View xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" controllerName="tms.tmssystem.controller.Register"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <uxap:ObjectPageLayout showFooter="true" >
+    <uxap:headerTitle>
+    <uxap:ObjectPageDynamicHeaderTitle >
+    <uxap:expandedHeading>
+    <Title text="Register User" level="H5" titleStyle="H5"></Title>
+    </uxap:expandedHeading>
+    <uxap:snappedHeading>
+    <Title text="Register User" level="H5" titleStyle="H5"></Title>
+    </uxap:snappedHeading>
+  
+    <uxap:expandedContent>
+    <Text text="Please fill in the details below to register."></Text>
+    </uxap:expandedContent>
+    <uxap:snappedContent>
+    <Text text="Please fill in the details below to register."></Text>
+    </uxap:snappedContent>
+    <uxap:actions>
+    <Button text="Submit" type="Emphasized"></Button>
+    
+    <Button icon="sap-icon://inspect-down" press="CloseFLRegisterPress"></Button>
+    </uxap:actions>
+    </uxap:ObjectPageDynamicHeaderTitle>
+    </uxap:headerTitle>
+    <uxap:sections>
+    <uxap:ObjectPageSection title="User Information" titleUppercase="false">
+    <uxap:ObjectPageSubSection >
+ <form:SimpleForm columnsL="2" columnsM="2" columnsXL="-1" layout="ColumnLayout" labelSpanL="2" labelSpanM="2" >
+ <form:content>
+ <Label text="First Name">
+ 
+ </Label>
+ <Input ></Input>
+  <Label text="Last Name"></Label>
+  <Input ></Input>
+  <Label text="Email"></Label>
+  <Input ></Input>
+  <Label text="Password"></Label>
+  <Input type="Password"></Input>
+  <Label text="Confirm Password"></Label>
+  <Input type="Password"></Input>
+  <Label text="Phone Number"></Label>
+  <Input ></Input>
+  <Label text="Address"></Label>
+  <Input ></Input>
+  <Label text="City"></Label>
+  <Input ></Input>
+  <Label text="State"></Label>
+  <Input ></Input>
+  <Label text="Country"></Label>
+  <Input ></Input>
+  <Label text="Zip Code"></Label>
+  <Input ></Input>
+  <Label text="Date of Birth"></Label>
+  <Input type="Date"></Input>
+
+ </form:content>
+ </form:SimpleForm>
+    </uxap:ObjectPageSubSection>
+    </uxap:ObjectPageSection>
+    <uxap:ObjectPageSection title="Company Detail ( Optional )" titleUppercase="false">
+    
+    <uxap:ObjectPageSubSection >
+<form:SimpleForm columnsL="2" columnsM="2" columnsXL="-1" layout="ColumnLayout" labelSpanL="2" labelSpanM="2">
+<form:content>
+
+<Label text="Company Name"></Label>
+<Input ></Input>
+<Label text="Company Email"></Label>
+<Input ></Input>
+<Label text="Company Phone"></Label>
+<Input ></Input>
+<Label text="Company Address"></Label>
+<Input ></Input>
+<Label text="Company City"></Label>
+<Input ></Input>
+<Label text="Company State"></Label>
+<Input ></Input>
+<Label text="Company Country"></Label>
+<Input ></Input>
+<Label text="Company Zip Code"></Label>
+<Input ></Input>
+<Label text="Company Registration Number"></Label>
+<Input ></Input>
+<Label text="Company Type"></Label>
+<Input></Input>
+<Label text="Company Size"></Label>
+<Input></Input>
+<Label text="Company Website"></Label>
+<Input></Input>
+<Label text="Company Industry"></Label>
+<Input></Input>
+<Label text="Company Description"></Label>
+<Input></Input>
+<Label text="Company Logo"></Label>
+<Input type="Url"></Input>
+<Label text="Company Tax ID"></Label>
+<Input></Input>
+<Label text="Company Bank Account"></Label>
+<Input></Input>
+<Label text="Company Registration Date"></Label>
+<Input type="Date"></Input>
+</form:content>
+</form:SimpleForm>
+    </uxap:ObjectPageSubSection>
+    </uxap:ObjectPageSection>
+    </uxap:sections>
+  <uxap:footer>
+  <OverflowToolbar >
+  <ToolbarSpacer ></ToolbarSpacer>
+  <Button text="Submit" type="Emphasized"></Button>
+  
+  </OverflowToolbar>
+  </uxap:footer>
+    </uxap:ObjectPageLayout>
+  
+</mvc:View>

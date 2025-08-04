@@ -1,0 +1,223 @@
+{
+    "_version": "1.60.0",
+    "sap.app": {
+        "id": "tms.tmssystem",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.15.5",
+            "toolsId": "29eda54f-4979-417a-a474-119d077d7f5b"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.120.27",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "tms.tmssystem.i18n.i18n"
+                }
+            },
+            "ColumnLayout":{
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "Accessibility":{
+                "type": "sap.ui.model.json.JSONModel",
+               "uri": "model/AccessModel.json"
+            },
+            "CMNo":{
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "StatusItem":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/ItemStatus.json"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "rootview",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "tms.tmssystem.view",
+                "async": true,
+                "viewPath": "tms.tmssystem.view",
+                "bypassed": {
+                    "target": "Notfound"
+                }
+            },
+            "routes": [
+
+                {
+                    "name": "RouteLoginR",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetLoginR"
+                    ]
+                },
+                {
+                    "name": "MainApp",
+                    "pattern": ":?query:main",
+                    "target": [
+                        "MainApp","Home"
+                    ]
+                },
+                {
+                    "name": "Home",
+                    "pattern": ":?query:main/home",
+                    "target": [
+                        "Home"
+                    ]
+                },
+                 {
+                    "name": "Profile",
+                    "pattern": ":?query:main/profile",
+                    "target": [
+                        "UserProfile"
+                    ]
+                },
+                {
+                    "name": "Notfound",
+                    "pattern": ":?query:notfound",
+                    "target": [
+                        "Notfound"
+                    ]
+                },
+                  {
+                    "name": "ShipmentPayment",
+                    "pattern": ":?query:ShipmentPayment",
+                    "target": [
+                        "ShipmentPayment"
+                    ]
+                },
+                {
+                    "name": "TrackTrace",
+                     "pattern": ":?query:trackstatus",
+                    "target": [
+                        "TrackTrace"
+                    ]
+                },
+                  {
+                    "name": "SettingU",
+                     "pattern": ":?query:settingu",
+                    "target": [
+                        "SettingU"
+                    ]
+                },
+                 {
+                    "name": "Message",
+                     "pattern": ":?query:message",
+                    "target": [
+                        "MessageU"
+                    ]
+                }
+            ],
+            "targets": {
+                "Notfound": {
+                    "viewName": "Notfound",
+                    "viewLevel": 1,
+                    "viewId": "Notfound"
+                },
+                    "MessageU": {
+                    "name": "UsersView.MessageU",
+                    "parent": "MainApp",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "id": "MessageU"
+                },
+                  "SettingU": {
+                    "name": "UsersView.SettingU",
+                    "parent": "MainApp",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "id": "SettingU"
+                },
+                  "TrackTrace": {
+                    "name": "UsersView.Trace",
+                    "parent": "MainApp",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "id": "Trace"
+                },
+                   "ShipmentPayment": {
+                    "name": "UsersView.Shipment",
+                    "parent": "MainApp",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "id": "Shipment"
+                },
+                "TargetLoginR": {
+                    "id": "LoginR",
+                    "name": "register.LoginR"
+                },
+                   "MainApp": {
+                    "id": "app",
+                    "name": "Main"
+                },
+                "Home": {
+                    "id": "Home",
+                    "parent": "MainApp",
+                    "controlId": "app",
+                    
+                    "controlAggregation": "pages",
+                    "name": "UsersView.Home"
+                },
+                  "UserProfile": {
+                    "id": "UserProfile",
+                    "parent": "MainApp",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "name": "UsersView.UserProfile"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "tms.tmssystem.view.RootView",
+            "type": "XML",
+            "id": "rootview"
+        }
+    }
+}

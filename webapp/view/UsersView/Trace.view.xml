@@ -1,0 +1,91 @@
+<mvc:View xmlns:cards="sap.f.cards" xmlns:commons="sap.suite.ui.commons" xmlns:f="sap.f" xmlns:filterbar="sap.ui.comp.filterbar" controllerName="tms.tmssystem.controller.Trace"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+<f:DynamicPage class="sapUiNoContentPadding" >
+<f:header>
+<f:DynamicPageHeader >
+<Title text="Track Order Item"></Title>
+<f:content>
+<filterbar:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" showAllFilters="false" afterVariantLoad=".onAfterVariantLoad">
+<filterbar:filterGroupItems>
+<filterbar:FilterGroupItem label="Order No" name="Order_No" groupName="g1" visibleInFilterBar="true" mandatory="true">
+<filterbar:control>
+<Input ></Input>
+</filterbar:control>
+</filterbar:FilterGroupItem>
+</filterbar:filterGroupItems>
+<filterbar:filterGroupItems>
+<filterbar:FilterGroupItem label="Order Item Name" name="Order_Item_Name" groupName="g2" visibleInFilterBar="true">
+<filterbar:control>
+<Input ></Input>
+</filterbar:control>
+</filterbar:FilterGroupItem>
+</filterbar:filterGroupItems>
+</filterbar:FilterBar>
+</f:content>
+</f:DynamicPageHeader>
+</f:header>
+<f:content>
+<FlexBox  width="auto" direction="Column" class="sapUiSmallMargin" >
+<f:Card >
+<f:header>
+<cards:Header title="Order Item Detail"></cards:Header>
+</f:header>
+<f:content>
+<List >
+<ObjectListItem title="Electric" number="125" numberUnit="" type="Active">
+<firstStatus>
+<ObjectStatus text="submit" state="Success"></ObjectStatus>
+</firstStatus>
+<ObjectAttribute text="123 KG" title="Weight"></ObjectAttribute>
+</ObjectListItem>
+</List>
+</f:content>
+</f:Card>
+<f:Card class="sapUiSmallMarginTop">
+<f:content>
+<commons:ChartContainer   title="Order Status" showFullScreen="false" showZoom="false" showLegendButton="false" showLegend="true" fullScreen="true"  autoAdjustHeight="true" >
+<commons:content>
+<commons:ChartContainerContent >
+<commons:content>
+<commons:ProcessFlow  lanes="{StatusItem>/lanes}" nodes="{StatusItem>/nodes}">
+<commons:nodes>
+		<commons:ProcessFlowNode
+					laneId="{StatusItem>lane}"
+					nodeId="{StatusItem>id}"
+					title="{StatusItem>title}"
+					titleAbbreviation="{StatusItem>titleAbbreviation}"
+					children="{StatusItem>children}"
+					state="{StatusItem>state}"
+					stateText="{StatusItem>stateText}"
+					texts="{StatusItem>texts}"
+					highlighted="{StatusItem>highlighted}"
+					focused="{StatusItem>focused}"
+					type="{StatusItem>type}" />
+</commons:nodes>
+<commons:lanes>
+		<commons:ProcessFlowLaneHeader
+					laneId="{StatusItem>id}"
+					iconSrc="{StatusItem>icon}"
+					text="{StatusItem>label}"
+					position="{StatusItem>position}" />
+</commons:lanes>
+</commons:ProcessFlow>
+</commons:content>
+</commons:ChartContainerContent>
+</commons:content>
+</commons:ChartContainer>
+</f:content>
+</f:Card>
+
+
+
+
+
+</FlexBox>
+
+</f:content>
+
+</f:DynamicPage>
+</mvc:View>

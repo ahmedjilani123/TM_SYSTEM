@@ -1,0 +1,132 @@
+<mvc:View xmlns:form="sap.ui.layout.form" xmlns:microchart="sap.suite.ui.microchart" xmlns:tnt="sap.tnt" xmlns:cards="sap.f.cards" xmlns:f="sap.f" xmlns:layout="sap.ui.layout" xmlns:uxap="sap.uxap" controllerName="tms.tmssystem.controller.UserProfile"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+   <f:DynamicPage 	stickySubheaderProvider="iconTabBar"
+			class="sapUiNoContentPadding">
+  <f:title>
+  <f:DynamicPageTitle >
+  <f:heading>
+  <Title text="Ramesh Kumar"></Title>
+  </f:heading>
+  <f:actions>
+  <Button text="Maintain Profile"></Button>
+  </f:actions>
+  </f:DynamicPageTitle>
+  </f:title>
+  <f:header>
+  <f:DynamicPageHeader >
+ <FlexBox wrap="Wrap">
+   <Avatar
+                    class="sapUiSmallMarginEnd"
+                    src="Images/Profit.png"
+                    displaySize="L" active="true" showBorder="true" press="AvatarPress"
+                />
+ 
+  <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+  <layout:VerticalLayout >
+  <ObjectStatus title="First Name" text="Ramesh "></ObjectStatus>
+   <ObjectStatus title="Last Name" text="Kumar"></ObjectStatus>
+     <ObjectStatus title="User ID" text="RMM089"></ObjectStatus>
+  </layout:VerticalLayout>
+  </layout:VerticalLayout>
+   <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+  <layout:VerticalLayout >
+  <ObjectStatus title="Email" text="Ramesh@gmail.com "></ObjectStatus>
+   <ObjectStatus title="Phone" text="+91 89870-87896"></ObjectStatus>
+   <ObjectStatus title="Gender" text="M"></ObjectStatus>
+  </layout:VerticalLayout>
+  </layout:VerticalLayout>
+
+  <layout:VerticalLayout >
+  <ObjectStatus title="Order Per Month"></ObjectStatus>
+ 	<FlexBox width="20rem" height="7rem" alignItems="Center" class="sapUiSmallMargin">
+  <microchart:InteractiveLineChart  selectionChanged="selectionChanged" press="press" precedingPoint="0"
+									  succeedingPoint="50000">
+  <microchart:points>
+ 
+  	<microchart:InteractiveLineChartPoint value="14" label="May"  color="Critical"/>
+						<microchart:InteractiveLineChartPoint   color="Good" value="5000" label="June"/>
+  </microchart:points>
+  </microchart:InteractiveLineChart>
+    </FlexBox>
+  </layout:VerticalLayout>
+  </FlexBox>
+  </f:DynamicPageHeader>
+  </f:header>
+  <f:content>
+  <IconTabBar class="sapUiResponsiveContentPadding">
+  <items>
+  <IconTabFilter text="Summary">
+  <layout:Grid defaultSpan="XL6 L6 M12 S12">
+  
+  <f:Card >
+  <f:header>
+  <cards:Header title="Summary"></cards:Header>
+  </f:header>
+  <f:content>
+  <FlexBox direction="Column"  class="sapUiSmallMargin">
+  <ObjectStatus title="About" class="sapUiTinyMarginTop" text="You can reach the Shipments Payments page from the corresponding option in your main menu. On the page, you can see the information about recent shipments in the columns."></ObjectStatus>
+
+<Title text="Company Details" level="H6" titleStyle="H6" class="sapUiSmallMarginTopBottom"></Title>
+<ObjectStatus title="Company Name" text="XYZ PVT. LTD"></ObjectStatus>
+<ObjectStatus title="Company Address" text="123, ABC Street, City, State, 123456"></ObjectStatus>
+<ObjectStatus title="Company Contact" text="+91 12345-67890"></ObjectStatus>
+   
+
+
+  </FlexBox>
+  </f:content>
+  </f:Card>
+   <f:Card >
+   <f:header>
+   <cards:Header title="Review"></cards:Header>
+   </f:header>
+  <f:content>
+  <List >
+  <FeedListItem 	sender="ramesh"
+			icon="sap-icon://employee"
+			senderPress="onSenderPress"
+			iconPress="onIconPress"
+			info="RMM089"
+			
+			timestamp="2023-10-01T12:00:00Z"
+			text="Your order has been accepted and is being processed.">
+  </FeedListItem>
+   <FeedListItem 	sender="ramesh"
+			icon="sap-icon://employee"
+			senderPress="onSenderPress"
+			iconPress="onIconPress"
+			info="RMM089"
+		
+			timestamp="2023-10-01T12:00:00Z"
+			text="Your order has been accepted and is being processed.">
+  </FeedListItem>
+   <FeedListItem 	sender="ramesh"
+			icon="sap-icon://employee"
+			senderPress="onSenderPress"
+			iconPress="onIconPress"
+			info="RMM089"
+		
+			timestamp="2023-10-01T12:00:00Z"
+			text="Your order has been accepted and is being processed.">
+  </FeedListItem>
+
+  </List>
+  
+  </f:content>
+  </f:Card>
+  </layout:Grid>
+  </IconTabFilter>
+  <IconTabFilter text="Availability">
+  
+  	<FlexBox direction="Row" alignItems="Start" class="sapUiTinyMarginBottom">
+				<Text text="Status" class="sapUiTinyMarginEnd"/>
+				<tnt:InfoLabel id="il7" text="Available" colorScheme="8" width="250px"/>
+			</FlexBox>
+  </IconTabFilter>
+  </items>
+  </IconTabBar>
+  </f:content>
+   </f:DynamicPage>
+</mvc:View>

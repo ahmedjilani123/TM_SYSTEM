@@ -1,0 +1,7 @@
+<mvc:View controllerName="tms.tmssystem.controller.RootView"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="rootview">
+    </App>
+</mvc:View>

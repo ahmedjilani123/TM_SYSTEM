@@ -1,0 +1,39 @@
+{
+    "allView": [
+        {
+            "name": "Dashboard",
+            "key": "Home",
+            "icon": "sap-icon://home"
+        },
+        {
+            "name": "Profile",
+            "key": "Profile",
+            "icon": "sap-icon://account"
+        },
+        {
+            "name": "Shipment&Payment",
+            "key": "ShipmentPayment",
+            "icon": "sap-icon://shipping-status"
+        },
+        {
+            "name": "Track&Trace",
+            "key": "TrackTrace",
+            "icon": "sap-icon://map"
+        },
+        {
+            "name": "Setting",
+            "key": "SettingU",
+            "icon": "sap-icon://settings"
+        },
+        {
+            "name": "Message",
+            "key": "Message",
+            "icon": "sap-icon://message-information"
+        }
+    ],
+    "name": "LogOut",
+    "key": "LogOut",
+    "icon": "sap-icon://log",
+    "text1": "Home",
+    "key1": "Home"
+}

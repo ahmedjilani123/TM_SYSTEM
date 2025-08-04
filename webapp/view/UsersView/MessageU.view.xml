@@ -1,0 +1,65 @@
+<mvc:View xmlns:richtexteditor="sap.ui.richtexteditor" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:cards="sap.f.cards" xmlns:commons="sap.suite.ui.commons" xmlns:f="sap.f" xmlns:filterbar="sap.ui.comp.filterbar" controllerName="tms.tmssystem.controller.MessageU"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+<f:DynamicPage class="sapUiNoContentPadding"  showFooter="true" >
+<f:header>
+<f:DynamicPageHeader pinnable="false">
+<Title text="Message"></Title>
+<f:content>
+<filterbar:FilterBar persistencyKey="myPersKey"  showGoOnFB="false" showFilterConfiguration="false" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" showAllFilters="false" afterVariantLoad=".onAfterVariantLoad">
+<filterbar:filterGroupItems>
+<filterbar:FilterGroupItem label="Order No" name="Order_No" groupName="g1" visibleInFilterBar="true" mandatory="true">
+<filterbar:control>
+<Input ></Input>
+</filterbar:control>
+</filterbar:FilterGroupItem>
+</filterbar:filterGroupItems>
+<filterbar:filterGroupItems>
+<filterbar:FilterGroupItem label="Admin Name" name="Admin_Name" groupName="g2" visibleInFilterBar="true">
+<filterbar:control>
+<ComboBox >
+<items>
+<core:Item text="Admin"></core:Item>
+</items>
+</ComboBox>
+</filterbar:control>
+</filterbar:FilterGroupItem>
+</filterbar:filterGroupItems>
+<filterbar:filterGroupItems>
+<filterbar:FilterGroupItem label="Driver Name" name="Driver_Name" groupName="g3" visibleInFilterBar="true">
+<filterbar:control>
+<ComboBox >
+<items>
+<core:Item text="Driver"></core:Item>
+</items>
+</ComboBox>
+</filterbar:control>
+</filterbar:FilterGroupItem>
+</filterbar:filterGroupItems>
+</filterbar:FilterBar>
+</f:content>
+</f:DynamicPageHeader>
+</f:header>
+<f:content>
+<form:SimpleForm layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1" labelSpanL="12" labelSpanM="12" labelSpanS="12">
+<form:content>
+<Label text="Subject" required="true">
+
+</Label>
+<Input ></Input>
+<Label text="Message"></Label>
+<richtexteditor:RichTextEditor ></richtexteditor:RichTextEditor>
+
+</form:content>
+</form:SimpleForm>
+</f:content>
+<f:footer>
+<OverflowToolbar >
+<ToolbarSpacer ></ToolbarSpacer>
+<Button text="Send"></Button>
+</OverflowToolbar>
+</f:footer>
+
+</f:DynamicPage>
+</mvc:View>

@@ -1,0 +1,103 @@
+.loginPage {
+  background-color: #ffffff;
+  height: 100vh;
+}
+.loginImageF{
+    width: 100%;
+    height: 100%;
+    object-fit: fill !important;
+    
+}
+.loginWrapper {
+  height: 100%;
+  justify-content: center;
+}
+
+.loginContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.loginFormBox {
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.loginFormInner {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(36, 32, 32, 0.274);
+  background-color: #ffffff;
+}
+
+.loginFooter {
+  margin-top: 2rem;
+}
+
+.loginImageBox {
+  background: linear-gradient(to top right, #81d7fc, #fcdbb5c5);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+
+  .loginFormBox, .loginImageBox {
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  .loginImageBox {
+    border-radius: 0;
+  }
+
+  .loginFormInner {
+    /* padding: 1rem; */
+    width: 100%;
+  }
+}
+.loginHeaderBox {
+  margin-bottom: 2rem;
+}
+
+.loginMainTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.loginSubTitle {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+
+ /* .sapMInputBaseContentWrapper , .sapMInputBaseInner, .sapMInput,.sapMSl,.sapMSltDefault,.sapMSltArrow,.sapUiFup{
+    height: 2.5rem !important;
+}  */
+ /* .sapMBtn, .sapMBtnInner{ 
+     height: 2.5rem !important;
+}
+ .sapMBtnText, .sapMBtnCustomIcon, .sapMBtnIcon , .sapMBtnIconFirst  {
+     display: flex ;
+    justify-content: space-around ;
+    align-content: center ;
+    flex-wrap: wrap ;
+    align-items: stretch ;
+} */
+
+ 
+.tox-tinymce-aux {
+    height: 0px !important;
+  }
+

@@ -1,0 +1,182 @@
+<mvc:View xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data" xmlns:controls="sap.viz.ui5.controls" xmlns:cards="sap.f.cards" xmlns:f="sap.f" xmlns:layout="sap.ui.layout" xmlns:microchart="sap.suite.ui.microchart" controllerName="tms.tmssystem.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" 	xmlns:chartC="sap.suite.ui.commons"
+    xmlns="sap.m">
+    <Page id="Home" title="Dashboard" >
+    <content >
+   <layout:Grid defaultSpan="XL6 L6 M6 S12" class="sapUiTinyMarginTop">
+   <f:Card height="15rem" >
+   <f:content>
+<chartC:ChartContainer  title="Order Status" showFullScreen="true" showZoom="false" showLegendButton="false" showLegend="true" fullScreen="true"  autoAdjustHeight="true">
+<chartC:content>
+<chartC:ChartContainerContent  >
+<chartC:content>
+ <controls:VizFrame legendVisible="true" vizType="column" 
+    width="100%" height="100%" 
+    vizProperties='{
+        "title": {
+            "visible": false,
+            "text": "Order Status"
+        },
+        "legend": {
+            "title": {
+                "visible": true,
+                "text": "Status"
+            },
+            "drawingEffect": "glossy"
+        },
+        "plotArea": {
+            "drawingEffect":"glossy",
+            "dataPointStyle": {
+        "rules": [
+          {
+            "dataContext": { "Status": "InProgress" },
+            "properties": {
+              "color": "#0063ff"
+            },
+            "displayName": "InProgress"
+          },
+          {
+            "dataContext": { "Status": "Completed" },
+            "properties": {
+              "color": "#75d93f"
+            },
+            "displayName": "Completed"
+          },
+          {
+            "dataContext": { "Status": "Submitted" },
+            "properties": {
+              "color": "#2bdd66"
+            },
+            "displayName": "Submitted"
+          },
+          {
+            "dataContext": { "Status": "Cancelled" },
+            "properties": {
+              "color": "#f21616"
+            },
+            "displayName": "Cancelled"
+          },
+          {
+            "dataContext": { "Status": "Pending" },
+            "properties": {
+              "color": "#ffb01b"
+            },
+            "displayName": "Pending"
+          }
+        ]
+      }
+            }
+        
+    }'>
+   <controls:dataset>
+   <data:FlattenedDataset data="{OrderStatusM>/OrderStatus}">
+   <data:dimensions>
+   <data:DimensionDefinition value="{OrderStatusM>status}" name="Status"></data:DimensionDefinition>
+   </data:dimensions>
+   <data:measures>
+   <data:MeasureDefinition value="{OrderStatusM>value}" name="Value"></data:MeasureDefinition>
+   </data:measures>
+   </data:FlattenedDataset>
+   </controls:dataset>
+   <controls:feeds>
+   <feeds:FeedItem type="Measure" uid="valueAxis" values="Value"></feeds:FeedItem>
+   <feeds:FeedItem type="Dimension" uid="categoryAxis" values="Status"></feeds:FeedItem>
+   </controls:feeds>
+   </controls:VizFrame>
+   </chartC:content>
+   </chartC:ChartContainerContent>
+</chartC:content>
+</chartC:ChartContainer>
+  
+   </f:content>
+   </f:Card>
+    <f:Card height="15rem" >
+   <f:content>
+<chartC:ChartContainer  title="Order Invoice" showFullScreen="true" showZoom="false" showLegendButton="false" showLegend="true" fullScreen="true"  autoAdjustHeight="true">
+<chartC:content>
+<chartC:ChartContainerContent  >
+<chartC:content>
+ <controls:VizFrame legendVisible="true" vizType="pie" 
+    width="100%" height="100%"  
+    vizProperties='{
+        "title": {
+            "visible": false,
+            "text": "Order Invoice"
+        },
+        "legend": {
+            "title": {
+                "visible": true,
+                "text": "Invoice"
+            },
+            "drawingEffect": "glossy"
+        },
+        "plotArea": {
+            "drawingEffect":"glossy"
+        }
+        
+    }'>
+   <controls:dataset>
+   <data:FlattenedDataset data="{OrderStatusM>/OderInvoice}">
+   <data:dimensions>
+   <data:DimensionDefinition value="{OrderStatusM>status}" name="Status"></data:DimensionDefinition>
+   </data:dimensions>
+   <data:measures>
+   <data:MeasureDefinition value="{OrderStatusM>value}" name="Value"></data:MeasureDefinition>
+   </data:measures>
+   </data:FlattenedDataset>
+   </controls:dataset>
+   <controls:feeds>
+   <feeds:FeedItem type="Measure" uid="size" values="Value"></feeds:FeedItem>
+   <feeds:FeedItem type="Dimension" uid="color" values="Status"></feeds:FeedItem>
+   </controls:feeds>
+   </controls:VizFrame>
+   </chartC:content>
+   </chartC:ChartContainerContent>
+</chartC:content>
+</chartC:ChartContainer>
+   </f:content>
+   </f:Card>
+   </layout:Grid>
+
+
+   <layout:Grid defaultSpan="XL12 L12 M12 S12">
+   <f:Card >
+   <f:content>
+   <chartC:ChartContainer  title="Order Items" showFullScreen="true" showZoom="false" showLegendButton="false" showLegend="true" fullScreen="true"  autoAdjustHeight="true">
+   <chartC:content>
+   <chartC:ChartContainerContent >
+   <chartC:content>
+   
+    <Table >
+    <columns>
+    <Column >
+    <Label text="Order Name"></Label>
+    </Column>
+     <Column >
+    <Label text="Order Created Date"></Label>
+    </Column>
+     <Column >
+    <Label text="Order Quantity"></Label>
+    </Column> <Column >
+    <Label text="Weight"></Label>
+    </Column>
+     <Column >
+    <Label text="Delivery Date"></Label>
+    </Column>
+     <Column >
+    <Label text="Delivery Address"></Label>
+    </Column>
+    </columns>
+    </Table>
+   </chartC:content>
+   </chartC:ChartContainerContent>
+   </chartC:content>
+   </chartC:ChartContainer>
+   </f:content>
+   </f:Card>
+   
+   </layout:Grid>
+    
+    </content>
+    </Page>
+</mvc:View>

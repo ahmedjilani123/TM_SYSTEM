@@ -1,0 +1,46 @@
+{
+    "OrderStatus":[
+        {
+            "status": "Completed",
+            "value": 6,
+            "displayedValue": 6
+        },
+        {
+            "status": "InProgress",
+            "value": 3,
+            "displayedValue": 3
+        },
+        {
+            "status": "Pending",
+            "value": 1,
+            "displayedValue": 1
+        },
+        {
+            "status": "Cancelled",
+            "value": 2,
+            "displayedValue": 2
+        },
+        {
+            "status":"Submitted",
+            "value": 4,
+            "displayedValue": 4
+        }
+    ],
+    "OderInvoice":[
+        {
+            "status": "Paid",
+            "value": 5,
+            "displayedValue": 5
+        },
+        {
+            "status": "Unpaid",
+            "value": 2,
+            "displayedValue": 2
+        },
+        {
+            "status": "Overdue",
+            "value": 1,
+            "displayedValue": 1
+        }
+    ]
+}
